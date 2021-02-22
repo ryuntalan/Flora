@@ -158,6 +158,13 @@
 			<key>orderHint</key>
 			<integer>21</integer>
 		</dict>
+		<key>PRTween.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>26</integer>
+		</dict>
 		<key>Pods-Messenger.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -177,21 +184,21 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>26</integer>
+			<integer>27</integer>
 		</dict>
 		<key>RealmSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>27</integer>
+			<integer>28</integer>
 		</dict>
 		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>28</integer>
+			<integer>29</integer>
 		</dict>
 		<key>leveldb-library.xcscheme</key>
 		<dict>

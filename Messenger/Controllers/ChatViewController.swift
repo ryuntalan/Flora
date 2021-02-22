@@ -56,7 +56,7 @@ final class ChatViewController: MessagesViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        view.backgroundColor = .systemGray4
 
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
@@ -87,8 +87,8 @@ final class ChatViewController: MessagesViewController {
         actionSheet.addAction(UIAlertAction(title: "Video", style: .default, handler: { [weak self]  _ in
             self?.presentVideoInputActionsheet()
         }))
-        actionSheet.addAction(UIAlertAction(title: "Audio", style: .default, handler: {  _ in
-
+        actionSheet.addAction(UIAlertAction(title: "Audio", style: .default, handler: { [weak self]  _ in
+            self?.presentAudioInputActionsheet()
         }))
         actionSheet.addAction(UIAlertAction(title: "Location", style: .default, handler: { [weak self]  _ in
             self?.presentLocationPicker()
@@ -140,6 +140,28 @@ final class ChatViewController: MessagesViewController {
         }
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+    private func presentAudioInputActionsheet() {
+        let actionSheet = UIAlertController(title: "Record Audio",
+                                            message: "Record an audio message?",
+                                            preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Record", style: .default, handler: { [weak self] _ in
+
+            let picker = UIImagePickerController()
+            picker.sourceType = .camera
+            picker.delegate = self
+            picker.mediaTypes = ["public.movie"]
+            picker.videoQuality = .typeMedium
+            picker.allowsEditing = true
+            self?.present(picker, animated: true)
+
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+        present(actionSheet, animated: true)
+    }
+
 
     private func presentPhotoInputActionsheet() {
         let actionSheet = UIAlertController(title: "Attach Photo",
@@ -198,6 +220,7 @@ final class ChatViewController: MessagesViewController {
 
         present(actionSheet, animated: true)
     }
+
 
     private func listenForMessages(id: String, shouldScrollToBottom: Bool) {
         DatabaseManager.shared.getAllMessagesForConversation(with: id, completion: { [weak self] result in

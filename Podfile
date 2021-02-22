@@ -24,4 +24,6 @@ pod 'JGProgressHUD'
 pod 'RealmSwift'
 pod 'SDWebImage'
 
+pod 'PRTween', '~> 0.1'
+
 end

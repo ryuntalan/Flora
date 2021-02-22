@@ -17,6 +17,13 @@
 		340345A625DFB6D6006B77D5 /* ConversationsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340345A525DFB6D6006B77D5 /* ConversationsModels.swift */; };
 		340345A925DFB701006B77D5 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340345A825DFB701006B77D5 /* ProfileViewModel.swift */; };
 		340345AC25DFB728006B77D5 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340345AB25DFB728006B77D5 /* SearchResult.swift */; };
+		345B979125E3713E00A3C4D0 /* RecordingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345B979025E3713E00A3C4D0 /* RecordingsViewController.swift */; };
+		345B979425E371A400A3C4D0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345B979325E371A400A3C4D0 /* MainViewController.swift */; };
+		345B979825E371F700A3C4D0 /* RecorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345B979725E371F700A3C4D0 /* RecorderViewController.swift */; };
+		345B979C25E3724700A3C4D0 /* RecordingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345B979B25E3724700A3C4D0 /* RecordingButton.swift */; };
+		345B979F25E3726800A3C4D0 /* RecordButtonKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345B979E25E3726800A3C4D0 /* RecordButtonKit.swift */; };
+		345B97A325E3732200A3C4D0 /* AudioVisualizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345B97A225E3732200A3C4D0 /* AudioVisualizerView.swift */; };
+		345B97A725E37DCA00A3C4D0 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345B97A625E37DCA00A3C4D0 /* RecordViewController.swift */; };
 		349FBEAF25DF31960093B8D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 349FBEAE25DF31960093B8D2 /* GoogleService-Info.plist */; };
 		34C2A40A25D7B0930029A781 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C2A40925D7B0930029A781 /* AppDelegate.swift */; };
 		34C2A40C25D7B0930029A781 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C2A40B25D7B0930029A781 /* SceneDelegate.swift */; };
@@ -125,6 +132,13 @@
 			remoteGlobalIDString = 86375444C196BA272DDBB8165BF64A15;
 			remoteInfo = FirebaseCrashlytics;
 		};
+		345B97E925E380F000A3C4D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 349FBEB125DF32A40093B8D2 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6E87F128D99E2CC3AFB7243CE45DE0C4;
+			remoteInfo = PRTween;
+		};
 		349FBEC325DF32A40093B8D2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 349FBEB125DF32A40093B8D2 /* Pods.xcodeproj */;
@@ -222,6 +236,14 @@
 		340345A525DFB6D6006B77D5 /* ConversationsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsModels.swift; sourceTree = "<group>"; };
 		340345A825DFB701006B77D5 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		340345AB25DFB728006B77D5 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		345B979025E3713E00A3C4D0 /* RecordingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingsViewController.swift; sourceTree = "<group>"; };
+		345B979325E371A400A3C4D0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		345B979725E371F700A3C4D0 /* RecorderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderViewController.swift; sourceTree = "<group>"; };
+		345B979B25E3724700A3C4D0 /* RecordingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingButton.swift; sourceTree = "<group>"; };
+		345B979E25E3726800A3C4D0 /* RecordButtonKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordButtonKit.swift; sourceTree = "<group>"; };
+		345B97A225E3732200A3C4D0 /* AudioVisualizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioVisualizerView.swift; sourceTree = "<group>"; };
+		345B97A625E37DCA00A3C4D0 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		345B97CA25E380EF00A3C4D0 /* Messenger-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Messenger-Bridging-Header.h"; sourceTree = "<group>"; };
 		349FBEAE25DF31960093B8D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		349FBEB125DF32A40093B8D2 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		34C2A40625D7B0930029A781 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -273,6 +295,40 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		345B979625E371CC00A3C4D0 /* RecorderView */ = {
+			isa = PBXGroup;
+			children = (
+				345B979A25E3721B00A3C4D0 /* RecordingButton */,
+				345B979725E371F700A3C4D0 /* RecorderViewController.swift */,
+			);
+			path = RecorderView;
+			sourceTree = "<group>";
+		};
+		345B979A25E3721B00A3C4D0 /* RecordingButton */ = {
+			isa = PBXGroup;
+			children = (
+				345B979B25E3724700A3C4D0 /* RecordingButton.swift */,
+				345B979E25E3726800A3C4D0 /* RecordButtonKit.swift */,
+			);
+			path = RecordingButton;
+			sourceTree = "<group>";
+		};
+		345B97A125E372E200A3C4D0 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				345B97A225E3732200A3C4D0 /* AudioVisualizerView.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		345B97EB25E3812F00A3C4D0 /* Objective-C Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				345B97CA25E380EF00A3C4D0 /* Messenger-Bridging-Header.h */,
+			);
+			path = "Objective-C Bridge";
+			sourceTree = "<group>";
+		};
 		349FBEB225DF32A40093B8D2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,6 +354,7 @@
 				349FBED625DF32A40093B8D2 /* nanopb.framework */,
 				349FBED825DF32A40093B8D2 /* Pods_Messenger.framework */,
 				349FBEDA25DF32A40093B8D2 /* FBLPromises.framework */,
+				345B97EA25E380F000A3C4D0 /* PRTween.framework */,
 				3403451525DF9C5D006B77D5 /* Realm.framework */,
 				3403451725DF9C5D006B77D5 /* RealmSwift.framework */,
 				3403451925DF9C5D006B77D5 /* SDWebImage.framework */,
@@ -326,12 +383,15 @@
 		34C2A40825D7B0930029A781 /* Messenger */ = {
 			isa = PBXGroup;
 			children = (
+				345B97EB25E3812F00A3C4D0 /* Objective-C Bridge */,
 				349FBEAE25DF31960093B8D2 /* GoogleService-Info.plist */,
+				345B97A125E372E200A3C4D0 /* Custom Views */,
 				34C2A42225D7B0FD0029A781 /* Resources */,
 				34C2A42025D7B0F20029A781 /* Models */,
 				34C2A41F25D7B0ED0029A781 /* Views */,
 				34C2A41E25D7B0E20029A781 /* Controllers */,
 				34C2A41725D7B0940029A781 /* Info.plist */,
+				345B97A625E37DCA00A3C4D0 /* RecordViewController.swift */,
 			);
 			path = Messenger;
 			sourceTree = "<group>";
@@ -346,6 +406,9 @@
 				34C2A43325D7B2AC0029A781 /* NewConversationViewController.swift */,
 				34C2A42D25D7B2760029A781 /* PhotoViewerViewController.swift */,
 				34C2A43625D7B2C10029A781 /* ProfileViewController.swift */,
+				345B979325E371A400A3C4D0 /* MainViewController.swift */,
+				345B979025E3713E00A3C4D0 /* RecordingsViewController.swift */,
+				345B979625E371CC00A3C4D0 /* RecorderView */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -556,6 +619,13 @@
 			remoteRef = 3403459825DFAE55006B77D5 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		345B97EA25E380F000A3C4D0 /* PRTween.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PRTween.framework;
+			remoteRef = 345B97E925E380F000A3C4D0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		349FBEC425DF32A40093B8D2 /* FirebaseAuth.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -737,13 +807,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				345B979425E371A400A3C4D0 /* MainViewController.swift in Sources */,
 				34C2A42725D7B2440029A781 /* LoginViewController.swift in Sources */,
 				340345A025DFB045006B77D5 /* NewConversationCell.swift in Sources */,
 				3403457A25DFAE54006B77D5 /* LocationPickerViewController.swift in Sources */,
+				345B979825E371F700A3C4D0 /* RecorderViewController.swift in Sources */,
 				3403447B25DF69DE006B77D5 /* DatabaseManager.swift in Sources */,
+				345B97A325E3732200A3C4D0 /* AudioVisualizerView.swift in Sources */,
+				345B979C25E3724700A3C4D0 /* RecordingButton.swift in Sources */,
+				345B979125E3713E00A3C4D0 /* RecordingsViewController.swift in Sources */,
 				34C2A42B25D7B25B0029A781 /* RegisterViewController.swift in Sources */,
 				34C2A43425D7B2AD0029A781 /* NewConversationViewController.swift in Sources */,
 				34C2A40E25D7B0930029A781 /* ConversationsViewController.swift in Sources */,
+				345B979F25E3726800A3C4D0 /* RecordButtonKit.swift in Sources */,
 				34C2A43D25D7C3620029A781 /* Extensions.swift in Sources */,
 				34C2A40A25D7B0930029A781 /* AppDelegate.swift in Sources */,
 				340345AC25DFB728006B77D5 /* SearchResult.swift in Sources */,
@@ -754,6 +830,7 @@
 				340344F025DF9C5D006B77D5 /* ChatViewController.swift in Sources */,
 				34C2A42E25D7B2760029A781 /* PhotoViewerViewController.swift in Sources */,
 				3403453A25DFA1B8006B77D5 /* StorageManager.swift in Sources */,
+				345B97A725E37DCA00A3C4D0 /* RecordViewController.swift in Sources */,
 				340345A625DFB6D6006B77D5 /* ConversationsModels.swift in Sources */,
 				340345A325DFB663006B77D5 /* ChatModels.swift in Sources */,
 			);
@@ -912,6 +989,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Untalan.Messenger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Messenger/Objective-C Bridge/Messenger-Bridging-header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -932,6 +1010,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Untalan.Messenger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Messenger/Objective-C Bridge/Messenger-Bridging-header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
