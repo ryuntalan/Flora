@@ -1,8 +1,8 @@
 //
-//  RecordViewController.swift
+//  RecorderViewController.swift
 //  Messenger
 //
-//  Created by Ryan Untalan on 2/21/21.
+//  Created by Ryan Untalan on 2/22/21.
 //
 
 import UIKit
@@ -17,7 +17,6 @@ enum RecorderState {
 
 protocol RecorderViewControllerDelegate: class {
     func didStartRecording()
-    func didAddRecording()
     func didFinishRecording()
 }
 
@@ -49,6 +48,17 @@ class RecorderViewController: UIViewController {
         setupRecordingButton()
         setupTimeLabel()
         setupAudioView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let notificationName = AVAudioSession.interruptionNotification
+        NotificationCenter.default.addObserver(self, selector: #selector(handleRecording(_:)), name: notificationName, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
     }
     
     //MARK:- Setup Methods
@@ -95,7 +105,9 @@ class RecorderViewController: UIViewController {
     
     //MARK:- Actions
     @objc func handleRecording(_ sender: RecordButton) {
+        var defaultFrame: CGRect = CGRect(x: 0, y: 24, width: view.frame.width, height: 135)
         if recordButton.isRecording {
+            defaultFrame = self.view.frame
             audioView.isHidden = false
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
                 self.handleView.alpha = 1
@@ -111,7 +123,7 @@ class RecorderViewController: UIViewController {
                 self.handleView.alpha = 0
                 self.timeLabel.alpha = 0
                 self.audioView.alpha = 0
-                self.view.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 150)
+                self.view.frame = defaultFrame
                 self.view.layoutIfNeeded()
             }, completion: nil)
             self.stopRecording()
@@ -199,20 +211,7 @@ class RecorderViewController: UIViewController {
                 }
             }
             
-            var write = false
-            if silent {
-                if ts - self.silenceTs < 0.25 && self.silenceTs > 0 {
-                    write = true
-                } else {
-                    self.audioFile = nil
-                    if let d = self.delegate {
-                        d.didAddRecording()
-                    }
-                }
-            } else {
-                write = true
-                self.silenceTs = ts
-            }
+            let write = true
             if write {
                 if self.audioFile == nil {
                     self.audioFile = self.createAudioRecordFile()
@@ -310,6 +309,20 @@ class RecorderViewController: UIViewController {
         } catch let error as NSError {
             print(error.localizedDescription)
             return nil
+        }
+    }
+    
+    // MARK:- Handle interruption
+    @objc func handleInterruption(notification: Notification) {
+        guard let userInfo = notification.userInfo else { return }
+        guard let key = userInfo[AVAudioSessionInterruptionTypeKey] as? NSNumber
+            else { return }
+        if key.intValue == 1 {
+            DispatchQueue.main.async {
+                if self.isRecording() {
+                    self.stopRecording()
+                }
+            }
         }
     }
     

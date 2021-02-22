@@ -41,6 +41,10 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController: RecorderViewControllerDelegate {
+    func didAddRecording() {
+        print("hello");
+    }
+    
     func didStartRecording() {
         if let recordings = self.recordingsViewController {
             recordings.fadeView.isHidden = false
@@ -89,3 +93,4 @@ extension MainViewController: RecordingsViewControllerDelegate {
             })
         }
     }
+}

@@ -103,19 +103,11 @@
         <!--Reflection-->
         <scene sceneID="vfd-Zq-Y3f">
             <objects>
-                <viewController id="hcz-0p-vSW" sceneMemberID="viewController">
+                <viewController id="hcz-0p-vSW" customClass="MainViewController" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ciR-dE-4Bk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zp2-g8-ehB">
-                                <rect key="frame" x="0.0" y="663" width="414" height="150"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <segue destination="9KC-zd-Uzq" kind="embed" id="BNZ-KK-dAt"/>
-                                </connections>
-                            </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ifd-5C-0vP">
                                 <rect key="frame" x="0.0" y="140" width="414" height="523"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -123,11 +115,23 @@
                                     <segue destination="Dsw-Kf-Syz" kind="embed" id="MCn-y1-7lW"/>
                                 </connections>
                             </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zp2-g8-ehB">
+                                <rect key="frame" x="0.0" y="663" width="414" height="150"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <connections>
+                                    <segue destination="9KC-zd-Uzq" kind="embed" id="BNZ-KK-dAt"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xko-vJ-zaI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Reflection" id="Vft-rq-qsH"/>
+                    <connections>
+                        <outlet property="recorderView" destination="Zp2-g8-ehB" id="Lcx-4c-OXz"/>
+                        <outlet property="recordingsView" destination="ifd-5C-0vP" id="0vJ-gY-ZGn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u9O-ID-ydM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -136,7 +140,6 @@
         <!--Profile-->
         <scene sceneID="m2l-vO-tyT">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kb2-mQ-AvM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="2Ig-5u-1vj" customClass="ProfileViewController" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aHg-0c-q9G">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -161,6 +164,7 @@
                         <outlet property="tableView" destination="60B-VO-14v" id="p3g-BI-Mh0"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kb2-mQ-AvM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1062" y="1554"/>
         </scene>
@@ -301,40 +305,45 @@
             </objects>
             <point key="canvasLocation" x="-3643" y="799"/>
         </scene>
-        <!--View Controller-->
+        <!--Recorder View Controller-->
         <scene sceneID="Ptd-9x-20y">
             <objects>
-                <viewController id="9KC-zd-Uzq" sceneMemberID="viewController">
-                    <view key="view" hidden="YES" contentMode="scaleToFill" id="Wuz-kf-xkU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
+                <viewController title="Recorder View Controller" id="9KC-zd-Uzq" customClass="RecorderViewController" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
+                    <size key="freeformSize" width="414" height="150"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HCo-r0-niJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1526" y="2496"/>
+            <point key="canvasLocation" x="-1526" y="2457"/>
         </scene>
-        <!--View Controller-->
+        <!--Recordings View Controller-->
         <scene sceneID="PmP-yk-QMI">
             <objects>
-                <viewController id="Dsw-Kf-Syz" sceneMemberID="viewController">
+                <viewController id="Dsw-Kf-Syz" customClass="RecordingsViewController" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K2I-W1-GFR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="523"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView hidden="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bSM-sW-qFN">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="523"/>
+                            <view contentMode="scaleToFill" id="24D-M9-W8x">
+                                <rect key="frame" x="0.0" y="44" width="414" height="479"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Ce-PS-gFX">
+                                <rect key="frame" x="0.0" y="44" width="414" height="479"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="XJg-CW-fwo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="fadeView" destination="24D-M9-W8x" id="Avd-dw-PKw"/>
+                        <outlet property="tableView" destination="3Ce-PS-gFX" id="aHl-tf-kjo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="abj-3z-gQq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1526.0869565217392" y="2076.8973214285716"/>
+            <point key="canvasLocation" x="-1526.0869565217392" y="2111.71875"/>
         </scene>
     </scenes>
     <resources>

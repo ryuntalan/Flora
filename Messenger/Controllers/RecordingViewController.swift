@@ -1,8 +1,8 @@
 //
-//  RecordingsViewController.swift
+//  RecordingViewController.swift
 //  Messenger
 //
-//  Created by Ryan Untalan on 2/21/21.
+//  Created by Ryan Untalan on 2/22/21.
 //
 
 let cellid = "cell"
@@ -26,10 +26,10 @@ class RecordingsViewController: UIViewController {
     private var recordings: [Recording] = []
     private var audioPlayer: AVAudioPlayer?
     weak var delegate: RecordingsViewControllerDelegate?
-    
+
     //MARK:- Outlets
-    @IBOutlet var fadeView: UIView!
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var fadeView: UIView!
     
     //MARK:- Life Cycle
     override func viewDidLoad() {
@@ -53,7 +53,7 @@ class RecordingsViewController: UIViewController {
     fileprivate func setupTableView() {
         self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 180, right: 0)
     }
-    
+
     // MARK:- Data
     func loadRecordings() {
         self.recordings.removeAll()
@@ -188,3 +188,4 @@ extension RecordingsViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
 }
+
