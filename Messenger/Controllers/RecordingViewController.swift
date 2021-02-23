@@ -5,7 +5,7 @@
 //  Created by Ryan Untalan on 2/22/21.
 //
 
-let cellid = "cell"
+let cellid = "audiocell"
 
 import UIKit
 import AVFoundation
@@ -28,7 +28,7 @@ class RecordingsViewController: UIViewController {
     weak var delegate: RecordingsViewControllerDelegate?
 
     //MARK:- Outlets
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableAudioView: UITableView!
     @IBOutlet weak var fadeView: UIView!
     
     //MARK:- Life Cycle
@@ -51,7 +51,7 @@ class RecordingsViewController: UIViewController {
     
     //MARK:- Setup Methods
     fileprivate func setupTableView() {
-        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 180, right: 0)
+        self.tableAudioView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 180, right: 0)
     }
 
     // MARK:- Data
@@ -63,16 +63,17 @@ class RecordingsViewController: UIViewController {
             let paths = try filemanager.contentsOfDirectory(at: documentsDirectory, includingPropertiesForKeys: nil, options: [])
             for path in paths {
                 let recording = Recording(name: path.lastPathComponent, path: path)
+                print("this is the ", recording)
                 self.recordings.append(recording)
             }
-            self.tableView.reloadData()
+            self.tableAudioView.reloadData()
         } catch {
             print(error)
         }
     }
     
     // MARK:- Playback
-    private func play(url: URL) {
+    private func play(audiourl: URL) {
         if let d = self.delegate {
             d.didStartPlayback()
         }
@@ -85,7 +86,7 @@ class RecordingsViewController: UIViewController {
             return
         }
         do {
-            let data = try Data(contentsOf: url)
+            let data = try Data(contentsOf: audiourl)
             self.audioPlayer = try AVAudioPlayer(data: data, fileTypeHint: AVFileType.caf.rawValue)
         } catch let error as NSError {
             print(error.localizedDescription)
@@ -103,9 +104,9 @@ class RecordingsViewController: UIViewController {
         if let d = self.delegate {
             d.didFinishPlayback()
         }
-        if let paths = self.tableView.indexPathsForSelectedRows {
+        if let paths = self.tableAudioView.indexPathsForSelectedRows {
             for path in paths {
-                self.tableView.deselectRow(at: path, animated: true)
+                self.tableAudioView.deselectRow(at: path, animated: true)
             }
         }
         if let player = self.audioPlayer {
@@ -132,6 +133,7 @@ extension RecordingsViewController: AVAudioPlayerDelegate {
     func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
         if let e = error {
             print(e.localizedDescription)
+            print("decode error")
         }
         self.stopPlay()
     }
@@ -148,29 +150,29 @@ extension RecordingsViewController: UITableViewDelegate, UITableViewDataSource {
             self.stopPlay()
         }
         let recording = self.recordings[indexPath.row]
-        self.play(url: recording.path)
+        self.play(audiourl: recording.path)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let result = self.recordings.count
         if result > 0 {
-            self.tableView.isHidden = false
+            self.tableAudioView.isHidden = false
         }
         else {
-            self.tableView.isHidden = true
+            self.tableAudioView.isHidden = true
         }
         return result
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: cellid)
-        if cell == nil {
-            cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellid)
+        var audiocell = tableView.dequeueReusableCell(withIdentifier: cellid)
+        if audiocell == nil {
+            audiocell = UITableViewCell(style: .subtitle, reuseIdentifier: cellid)
         }
         let recording = self.recordings[indexPath.row]
-        cell?.textLabel?.text = recording.name
-        cell?.detailTextLabel?.text = recording.path.absoluteString
-        return cell!
+        audiocell?.textLabel?.text = recording.name
+        audiocell?.detailTextLabel?.text = recording.path.absoluteString
+        return audiocell!
         
     }
     
@@ -181,7 +183,7 @@ extension RecordingsViewController: UITableViewDelegate, UITableViewDataSource {
             do {
                 try filemanager.removeItem(at: recording.path)
                 self.recordings.remove(at: indexPath.row)
-                self.tableView.reloadData()
+                self.tableAudioView.reloadData()
             }catch(let err){
                 print("Error while deleteing \(err)")
             }

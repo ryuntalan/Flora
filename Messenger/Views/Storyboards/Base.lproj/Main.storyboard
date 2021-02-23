@@ -123,14 +123,18 @@
                                     <segue destination="9KC-zd-Uzq" kind="embed" id="BNZ-KK-dAt"/>
                                 </connections>
                             </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="syO-gf-qWR">
+                                <rect key="frame" x="0.0" y="140" width="414" height="523"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xko-vJ-zaI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Reflection" id="Vft-rq-qsH"/>
                     <connections>
-                        <outlet property="recorderView" destination="Zp2-g8-ehB" id="Lcx-4c-OXz"/>
-                        <outlet property="recordingsView" destination="ifd-5C-0vP" id="0vJ-gY-ZGn"/>
+                        <outlet property="recorderView" destination="Zp2-g8-ehB" id="zyd-Pj-FXg"/>
+                        <outlet property="recordingsView" destination="syO-gf-qWR" id="bt4-dH-ElS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u9O-ID-ydM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -323,22 +327,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="523"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="24D-M9-W8x">
-                                <rect key="frame" x="0.0" y="44" width="414" height="479"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Ce-PS-gFX">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Ce-PS-gFX">
                                 <rect key="frame" x="0.0" y="44" width="414" height="479"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="audiocell" id="Mmq-o0-MIt">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mmq-o0-MIt" id="Rgs-It-Qpt">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Dsw-Kf-Syz" id="CBk-hX-LXV"/>
+                                    <outlet property="delegate" destination="Dsw-Kf-Syz" id="8h9-34-Ty0"/>
+                                    <outlet property="prefetchDataSource" destination="Dsw-Kf-Syz" id="Ow3-92-zYR"/>
+                                </connections>
                             </tableView>
+                            <view hidden="YES" opaque="NO" contentMode="scaleToFill" id="24D-M9-W8x">
+                                <rect key="frame" x="0.0" y="44" width="414" height="479"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="0.20223324315077593" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XJg-CW-fwo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
                         <outlet property="fadeView" destination="24D-M9-W8x" id="Avd-dw-PKw"/>
-                        <outlet property="tableView" destination="3Ce-PS-gFX" id="aHl-tf-kjo"/>
+                        <outlet property="tableAudioView" destination="3Ce-PS-gFX" id="yZb-xm-spb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="abj-3z-gQq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -42,7 +42,11 @@ class MainViewController: UIViewController {
 
 extension MainViewController: RecorderViewControllerDelegate {
     func didAddRecording() {
-        print("hello");
+        if let recordings = self.recordingsViewController {
+                    DispatchQueue.main.async {
+                        recordings.loadRecordings()
+                    }
+                }
     }
     
     func didStartRecording() {
