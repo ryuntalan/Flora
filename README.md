@@ -1,7 +1,7 @@
 # Rose, Thorn, Bud
-## Connecting parents and children together through self-reflection
+## Connecting parents and children through self-reflection
 
-#### Features List (n Progress)
+#### Features List (In Progress)
 - Firebase set up
 - Google & Facebook login/ register
 - Onboarding
