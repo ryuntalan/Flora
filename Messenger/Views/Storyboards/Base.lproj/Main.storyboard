@@ -108,13 +108,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ifd-5C-0vP">
-                                <rect key="frame" x="0.0" y="140" width="414" height="523"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <connections>
-                                    <segue destination="Dsw-Kf-Syz" kind="embed" id="MCn-y1-7lW"/>
-                                </connections>
-                            </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zp2-g8-ehB">
                                 <rect key="frame" x="0.0" y="663" width="414" height="150"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -123,9 +116,12 @@
                                     <segue destination="9KC-zd-Uzq" kind="embed" id="BNZ-KK-dAt"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="syO-gf-qWR">
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ifd-5C-0vP">
                                 <rect key="frame" x="0.0" y="140" width="414" height="523"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="Dsw-Kf-Syz" kind="embed" id="MCn-y1-7lW"/>
+                                </connections>
                             </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xko-vJ-zaI"/>
@@ -134,7 +130,7 @@
                     <navigationItem key="navigationItem" title="Reflection" id="Vft-rq-qsH"/>
                     <connections>
                         <outlet property="recorderView" destination="Zp2-g8-ehB" id="zyd-Pj-FXg"/>
-                        <outlet property="recordingsView" destination="syO-gf-qWR" id="bt4-dH-ElS"/>
+                        <outlet property="recordingsView" destination="ifd-5C-0vP" id="hsF-fr-JN8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u9O-ID-ydM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -313,11 +309,27 @@
         <scene sceneID="Ptd-9x-20y">
             <objects>
                 <viewController title="Recorder View Controller" id="9KC-zd-Uzq" customClass="RecorderViewController" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xao-fh-UlW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FnY-xg-F9h">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1UU-Jz-Ruu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
                     <size key="freeformSize" width="414" height="150"/>
+                    <connections>
+                        <outlet property="fadeView" destination="FnY-xg-F9h" id="Ii0-hj-LJS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HCo-r0-niJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1526" y="2457"/>
+            <point key="canvasLocation" x="-1526.0869565217392" y="2456.9196428571427"/>
         </scene>
         <!--Recordings View Controller-->
         <scene sceneID="PmP-yk-QMI">
@@ -332,23 +344,22 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="audiocell" id="Mmq-o0-MIt">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="audiocell" id="nfN-bu-bNC">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mmq-o0-MIt" id="Rgs-It-Qpt">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" semanticContentAttribute="playback" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nfN-bu-bNC" id="Oak-QG-fWY">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="Dsw-Kf-Syz" id="91A-hz-HTr"/>
-                                    <outlet property="delegate" destination="Dsw-Kf-Syz" id="02s-kp-eku"/>
-                                    <outlet property="prefetchDataSource" destination="Dsw-Kf-Syz" id="kSy-W9-N6y"/>
+                                    <outlet property="dataSource" destination="Dsw-Kf-Syz" id="Sln-6A-xbF"/>
+                                    <outlet property="delegate" destination="Dsw-Kf-Syz" id="zfV-B3-VKo"/>
                                 </connections>
                             </tableView>
-                            <view hidden="YES" opaque="NO" contentMode="scaleToFill" id="24D-M9-W8x">
-                                <rect key="frame" x="0.0" y="44" width="414" height="479"/>
+                            <view hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" id="24D-M9-W8x">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="523"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.20223324315077593" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -357,8 +368,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="fadeView" destination="24D-M9-W8x" id="Avd-dw-PKw"/>
-                        <outlet property="tableAudioView" destination="3Ce-PS-gFX" id="2Ua-7e-1jz"/>
+                        <outlet property="fadeView" destination="24D-M9-W8x" id="E36-8j-BxA"/>
+                        <outlet property="tableAudioView" destination="3Ce-PS-gFX" id="IMB-Va-ipX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="abj-3z-gQq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

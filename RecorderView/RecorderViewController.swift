@@ -294,7 +294,7 @@ class RecorderViewController: UIViewController {
     // MARK:- Paths and files
     private func createAudioRecordPath() -> URL? {
         let format = DateFormatter()
-        format.dateFormat="yyyy-MM-dd"
+        format.dateFormat="yyyy-MM-dd'T'HH:mm:ss"
         let currentFileName = "Reflection-\(format.string(from: Date()))" + ".wav"
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let audiourl = documentsDirectory.appendingPathComponent(currentFileName)

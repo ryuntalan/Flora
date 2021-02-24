@@ -22,6 +22,7 @@ class RecordButton: UIButton {
         }
     }
     
+    //play sound is refering to the ding noise when you press record
     @IBInspectable open var playSounds = true
     
     @IBInspectable open var frameColor : UIColor = RecordButtonKit.recordFrameColor {
