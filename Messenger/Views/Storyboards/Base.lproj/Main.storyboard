@@ -322,7 +322,7 @@
         <!--Recordings View Controller-->
         <scene sceneID="PmP-yk-QMI">
             <objects>
-                <viewController id="Dsw-Kf-Syz" customClass="RecordingsViewController" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Recordings View Controller" id="Dsw-Kf-Syz" customClass="RecordingsViewController" customModule="Messenger" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K2I-W1-GFR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="523"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -342,9 +342,9 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="Dsw-Kf-Syz" id="CBk-hX-LXV"/>
-                                    <outlet property="delegate" destination="Dsw-Kf-Syz" id="8h9-34-Ty0"/>
-                                    <outlet property="prefetchDataSource" destination="Dsw-Kf-Syz" id="Ow3-92-zYR"/>
+                                    <outlet property="dataSource" destination="Dsw-Kf-Syz" id="91A-hz-HTr"/>
+                                    <outlet property="delegate" destination="Dsw-Kf-Syz" id="02s-kp-eku"/>
+                                    <outlet property="prefetchDataSource" destination="Dsw-Kf-Syz" id="kSy-W9-N6y"/>
                                 </connections>
                             </tableView>
                             <view hidden="YES" opaque="NO" contentMode="scaleToFill" id="24D-M9-W8x">
@@ -358,7 +358,7 @@
                     </view>
                     <connections>
                         <outlet property="fadeView" destination="24D-M9-W8x" id="Avd-dw-PKw"/>
-                        <outlet property="tableAudioView" destination="3Ce-PS-gFX" id="yZb-xm-spb"/>
+                        <outlet property="tableAudioView" destination="3Ce-PS-gFX" id="2Ua-7e-1jz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="abj-3z-gQq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

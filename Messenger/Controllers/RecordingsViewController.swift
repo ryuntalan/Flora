@@ -1,5 +1,5 @@
 //
-//  RecordingViewController.swift
+//  RecordingsViewController.swift
 //  Messenger
 //
 //  Created by Ryan Untalan on 2/22/21.

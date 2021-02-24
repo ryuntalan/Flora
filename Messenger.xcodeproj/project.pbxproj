@@ -18,7 +18,7 @@
 		340345A925DFB701006B77D5 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340345A825DFB701006B77D5 /* ProfileViewModel.swift */; };
 		340345AC25DFB728006B77D5 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340345AB25DFB728006B77D5 /* SearchResult.swift */; };
 		345B979425E371A400A3C4D0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345B979325E371A400A3C4D0 /* MainViewController.swift */; };
-		345B991125E39E5E00A3C4D0 /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345B991025E39E5E00A3C4D0 /* RecordingViewController.swift */; };
+		345B991125E39E5E00A3C4D0 /* RecordingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345B991025E39E5E00A3C4D0 /* RecordingsViewController.swift */; };
 		345B997C25E3A1EE00A3C4D0 /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345B997B25E3A1EE00A3C4D0 /* RecordButton.swift */; };
 		345B998225E3A25200A3C4D0 /* AudioVisualizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345B998125E3A25200A3C4D0 /* AudioVisualizerView.swift */; };
 		345B998625E3A4B600A3C4D0 /* RecorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345B998525E3A4B600A3C4D0 /* RecorderViewController.swift */; };
@@ -238,7 +238,7 @@
 		340345A825DFB701006B77D5 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		340345AB25DFB728006B77D5 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		345B979325E371A400A3C4D0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		345B991025E39E5E00A3C4D0 /* RecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewController.swift; sourceTree = "<group>"; };
+		345B991025E39E5E00A3C4D0 /* RecordingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingsViewController.swift; sourceTree = "<group>"; };
 		345B997B25E3A1EE00A3C4D0 /* RecordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
 		345B998125E3A25200A3C4D0 /* AudioVisualizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioVisualizerView.swift; sourceTree = "<group>"; };
 		345B998525E3A4B600A3C4D0 /* RecorderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderViewController.swift; sourceTree = "<group>"; };
@@ -420,7 +420,7 @@
 				34C2A43625D7B2C10029A781 /* ProfileViewController.swift */,
 				345B979325E371A400A3C4D0 /* MainViewController.swift */,
 				345B98E825E39CB300A3C4D0 /* RecorderView */,
-				345B991025E39E5E00A3C4D0 /* RecordingViewController.swift */,
+				345B991025E39E5E00A3C4D0 /* RecordingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -842,7 +842,7 @@
 				340345A925DFB701006B77D5 /* ProfileViewModel.swift in Sources */,
 				340344F025DF9C5D006B77D5 /* ChatViewController.swift in Sources */,
 				34C2A42E25D7B2760029A781 /* PhotoViewerViewController.swift in Sources */,
-				345B991125E39E5E00A3C4D0 /* RecordingViewController.swift in Sources */,
+				345B991125E39E5E00A3C4D0 /* RecordingsViewController.swift in Sources */,
 				3403453A25DFA1B8006B77D5 /* StorageManager.swift in Sources */,
 				340345A625DFB6D6006B77D5 /* ConversationsModels.swift in Sources */,
 				345B997C25E3A1EE00A3C4D0 /* RecordButton.swift in Sources */,
