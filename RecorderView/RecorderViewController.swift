@@ -21,6 +21,7 @@ protocol RecorderViewControllerDelegate: class {
 }
 
 let keyID = "key"
+var reflectionNum = 1
 
 class RecorderViewController: UIViewController {
 
@@ -110,7 +111,7 @@ class RecorderViewController: UIViewController {
             defaultFrame = self.view.frame
             audioView.isHidden = false
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-                self.handleView.alpha = 1
+                self.handleView.alpha = 0
                 self.timeLabel.alpha = 1
                 self.audioView.alpha = 1
                 self.view.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.bounds.width, height: -300)
@@ -151,6 +152,7 @@ class RecorderViewController: UIViewController {
             break
         }
     }
+    
 
 
     // MARK:- Recording
@@ -238,6 +240,7 @@ class RecorderViewController: UIViewController {
     private func stopRecording() {
         if let d = self.delegate {
             d.didFinishRecording()
+            reflectionNum += 1
         }
         
         self.audioFile = nil
@@ -245,6 +248,7 @@ class RecorderViewController: UIViewController {
         self.audioEngine.stop()
         do {
             try AVAudioSession.sharedInstance().setActive(false)
+            self.performSegue(withIdentifier: "nextReflection", sender: self)
         } catch  let error as NSError {
             print(error.localizedDescription)
             return
@@ -290,12 +294,22 @@ class RecorderViewController: UIViewController {
         return format
     }
     
-    
     // MARK:- Paths and files
     private func createAudioRecordPath() -> URL? {
         let format = DateFormatter()
-        format.dateFormat="yyyy-MM-dd'T'HH:mm:ss"
-        let currentFileName = "Reflection-\(format.string(from: Date()))" + ".wav"
+        format.dateFormat="MM-dd-yyyy"
+        var currentFileName = "Rose-\(format.string(from: Date()))" + ".wav"
+        if reflectionNum == 1 {
+            currentFileName = "Rose-\(format.string(from: Date()))" + ".wav"
+        }
+        else if reflectionNum == 2 {
+            currentFileName = "Thorn-\(format.string(from: Date()))" + ".wav"
+        }
+        else if reflectionNum == 3 {
+            currentFileName = "Bud-\(format.string(from: Date()))" + ".wav"
+        }
+        
+        //let currentFileName = "\(reflectionNum)-Reflection-\(format.string(from: Date()))" + ".wav"
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let audiourl = documentsDirectory.appendingPathComponent(currentFileName)
         return audiourl
@@ -313,6 +327,7 @@ class RecorderViewController: UIViewController {
             return nil
         }
     }
+
     
     // MARK:- Handle interruption
     @objc func handleInterruption(notification: Notification) {

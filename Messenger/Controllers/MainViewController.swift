@@ -35,6 +35,7 @@ class MainViewController: UIViewController {
         if let recordings = self.recordingsViewController {
             recordings.delegate = self
         }
+        
 
     }
 
@@ -69,6 +70,7 @@ extension MainViewController: RecorderViewControllerDelegate {
                     DispatchQueue.main.async {
                         recordings.loadRecordings()
                     }
+                    self.performSegue(withIdentifier: "nextReflection", sender: self)
                 }
             })
         }

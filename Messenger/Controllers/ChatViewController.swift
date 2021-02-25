@@ -348,10 +348,11 @@ extension ChatViewController: UIImagePickerControllerDelegate, UINavigationContr
                     DatabaseManager.shared.sendMessage(to: conversationId, otherUserEmail: strongSelf.otherUserEmail, name: name, newMessage: message, completion: { success in
 
                         if success {
-                            print("sent photo message")
+                            print("sent video message")
+                            
                         }
                         else {
-                            print("failed to send photo message")
+                            print("failed to send video message")
                         }
 
                     })
@@ -364,6 +365,7 @@ extension ChatViewController: UIImagePickerControllerDelegate, UINavigationContr
     }
 
 }
+
 
 extension ChatViewController: InputBarAccessoryViewDelegate {
 
