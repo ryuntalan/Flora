@@ -8,6 +8,7 @@
 import UIKit
 import AVFoundation
 import Accelerate
+import Firebase
 
 enum RecorderState {
     case recording
@@ -237,10 +238,11 @@ class RecorderViewController: UIViewController {
         self.updateUI(.recording)
     }
     
+    
+    //reflectionNum
     private func stopRecording() {
         if let d = self.delegate {
             d.didFinishRecording()
-            reflectionNum += 1
         }
         
         self.audioFile = nil
@@ -295,25 +297,33 @@ class RecorderViewController: UIViewController {
     }
     
     // MARK:- Paths and files
-    private func createAudioRecordPath() -> URL? {
+    func createAudioRecordPath() -> URL? {
         let format = DateFormatter()
         format.dateFormat="MM-dd-yyyy"
         var currentFileName = "Rose-\(format.string(from: Date()))" + ".wav"
         if reflectionNum == 1 {
+            print("rose recorded")
             currentFileName = "Rose-\(format.string(from: Date()))" + ".wav"
+            reflectionNum = 2
         }
         else if reflectionNum == 2 {
             currentFileName = "Thorn-\(format.string(from: Date()))" + ".wav"
+            print("thorn recorded")
+            reflectionNum = 3
         }
         else if reflectionNum == 3 {
             currentFileName = "Bud-\(format.string(from: Date()))" + ".wav"
+            print("bud recorded")
+            reflectionNum = 1
         }
+
         
         //let currentFileName = "\(reflectionNum)-Reflection-\(format.string(from: Date()))" + ".wav"
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let audiourl = documentsDirectory.appendingPathComponent(currentFileName)
         return audiourl
     }
+
     
     private func createAudioRecordFile() -> AVAudioFile? {
         guard let path = self.createAudioRecordPath() else {

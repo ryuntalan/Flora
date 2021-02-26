@@ -141,6 +141,7 @@ final class ChatViewController: MessagesViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    
     private func presentAudioInputActionsheet() {
         let actionSheet = UIAlertController(title: "Record Audio",
                                             message: "Record an audio message?",
@@ -317,7 +318,7 @@ extension ChatViewController: UIImagePickerControllerDelegate, UINavigationContr
             })
         }
         else if let videoUrl = info[.mediaURL] as? URL {
-            let fileName = "photo_message_" + messageId.replacingOccurrences(of: " ", with: "-") + ".mov"
+            let fileName = "video_message_" + messageId.replacingOccurrences(of: " ", with: "-") + ".mov"
 
             // Upload Video
             StorageManager.shared.uploadMessageVideo(with: videoUrl, fileName: fileName, completion: { [weak self] result in
@@ -358,7 +359,7 @@ extension ChatViewController: UIImagePickerControllerDelegate, UINavigationContr
                     })
 
                 case .failure(let error):
-                    print("message photo upload error: \(error)")
+                    print("message video upload error: \(error)")
                 }
             })
         }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MainViewController: UIViewController {
 
@@ -24,6 +25,13 @@ class MainViewController: UIViewController {
     //MARK:- Outlets
     @IBOutlet weak var recordingsView: UIView!
     @IBOutlet weak var recorderView: UIView!
+    
+    //MARK:- Actions
+//    let randomID = UUID.init().uuidString
+//    @IBAction func uploadButtonwasTapped(_ sender: Any) {
+//        let uploadRef = Storage.storage().reference(withPath: "reflections/\(randomID).wav")
+//        guard let audioData = AudioVisualizerView.
+//    }
     
     //MARK:- Life Cycle
     override func viewDidLoad() {

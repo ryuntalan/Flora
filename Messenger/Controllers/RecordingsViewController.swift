@@ -9,6 +9,7 @@ let cellid = "audiocell"
 
 import UIKit
 import AVFoundation
+import InputBarAccessoryView
 
 struct Recording {
     var name: String
@@ -26,6 +27,15 @@ class RecordingsViewController: UIViewController {
     private var recordings: [Recording] = []
     private var audioPlayer: AVAudioPlayer?
     weak var delegate: RecordingsViewControllerDelegate?
+    
+    //MARK:- Function
+    public static let dateFormatter: DateFormatter = {
+        let formattre = DateFormatter()
+        formattre.dateStyle = .medium
+        formattre.timeStyle = .long
+        formattre.locale = .current
+        return formattre
+    }()
 
     //MARK:- Outlets
     @IBOutlet weak var tableAudioView: UITableView!
@@ -190,4 +200,3 @@ extension RecordingsViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
 }
-
