@@ -105,7 +105,7 @@ class RecordingsViewController: UIViewController {
         if let player = self.audioPlayer {
             player.delegate = self
             player.prepareToPlay()
-            player.volume = 1.0
+            player.volume = 10.0
             player.play()
         }
     }

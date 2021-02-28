@@ -253,6 +253,7 @@ class RecorderViewController: UIViewController {
             self.performSegue(withIdentifier: "nextReflection", sender: self)
         } catch  let error as NSError {
             print(error.localizedDescription)
+            self.performSegue(withIdentifier: "nextReflection", sender: self)
             return
         }
         self.updateUI(.stopped)
