@@ -1,6 +1,9 @@
 # Flora
 ## Share your day from far away. Connecting children and parents through self-reflection.
 
+![](flora.gif)
+
+
 #### Features List
 - Firebase set up
 - Google & Facebook login/ register
